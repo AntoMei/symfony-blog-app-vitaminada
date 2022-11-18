@@ -12,30 +12,27 @@
         <div class="article">
           <h2><span>Send us</span> mail</h2>
           <div class="clr"></div>
-          <form action="#" method="post" id="sendemail">
+        {{ form_start(form, {'attr': {'class':'form-horizontal'}}) }}
+        {{ form_errors(form) }}
             <ol>
               <li>
-                <label for="name">Name (required)</label>
-                <input id="name" name="name" class="text" />
+               {{ form_row(form.name, {'attr': {'class':'text'}}) }}
               </li>
               <li>
-                <label for="email">Email Address (required)</label>
-                <input id="email" name="email" class="text" />
+               {{ form_row(form.email, {'attr': {'class':'text'}}) }}
               </li>
               <li>
-                <label for="website">Website</label>
-                <input id="website" name="website" class="text" />
+                {{ form_row(form.website, {'attr': {'class':'text'}}) }}
               </li>
               <li>
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="8" cols="50"></textarea>
+                 {{ form_row(form.message, {'attr': {'class':'text'}}) }}
               </li>
               <li>
-                <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send" />
+                {{ form_row(form.Send, {'attr': {'class':'send'} }) }}
                 <div class="clr"></div>
               </li>
             </ol>
-          </form>
+          {{ form_end(form) }}
         </div>
       </div>
       <div class="sidebar">
