@@ -31,8 +31,8 @@ class PageController extends AbstractController
     }
 
     #[Route('/contact', name: 'contact')]
-public function contact(ManagerRegistry $doctrine, Request $request): Response
-{
+    public function contact(ManagerRegistry $doctrine, Request $request): Response
+    {
     $contact = new Contact();
     $form = $this->createForm(ContactFormType::class, $contact);
     $form->handleRequest($request);
@@ -45,6 +45,13 @@ public function contact(ManagerRegistry $doctrine, Request $request): Response
     }
     return $this->render('page/contact.html.twig', array(
         'form' => $form->createView()    
-    ));
-}
+        ));
+    }
+     /**
+     * @Route("/thankyou", name="thankyou")
+     */
+    public function thankyou(): Response
+    {
+        return $this->render('page/thankyou.html.twig', []);
+    }
 }
